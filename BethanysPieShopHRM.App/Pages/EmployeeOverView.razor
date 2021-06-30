@@ -2,6 +2,7 @@
 
 <h1 class="page-title">All employees</h1>
 
+
 @if (Employees == null)
 {
     <p><em>Loading...</em></p>
@@ -30,7 +31,7 @@ else
                         <a href="@($"employeedetail/{employee.EmployeeId}")" class="btn btn-primary table-btn">
                             <i class="fas fa-info-circle"></i>
                         </a>
-                        <a href="@($"employeeedit/{employee.EmployeeId}")" class="btn btn-primary table-btn">
+                        <a href="@($"employeeEdit/{employee.EmployeeId}")" class="btn btn-primary table-btn">
                             <i class="fas fa-edit"></i>
                         </a>
                     </td>
@@ -41,5 +42,4 @@ else
 }
 
 <button @onclick="QuickAddEmployee" class="btn btn-dark table-btn quick-add-btn">&nbsp;&nbsp;+&nbsp;&nbsp;</button>
-
 <AddEmployeeDialog @ref="AddEmployeeDialog" CloseEventCallback="@AddEmployeeDialog_OnDialogClose"></AddEmployeeDialog>

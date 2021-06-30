@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.Shared", "BethanysPieShopHRM.Shared\BethanysPieShopHRM.Shared.csproj", "{B737385A-8974-4C6D-8FCE-8C351C1C8C72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShopHRM.App", "BethanysPieShopHRM.App\BethanysPieShopHRM.App.csproj", "{D1CC4E0E-F41F-4779-9D36-B5AD074E40DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShopHRM.Shared", "BethanysPieShopHRM.Shared\BethanysPieShopHRM.Shared.csproj", "{B737385A-8974-4C6D-8FCE-8C351C1C8C72}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{01E15E11-D744-401C-B12B-7C1993AAF5B2}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,18 +16,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.Api", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.ComponentsLibrary", "BethanysPieShopHRM.ComponentsLibrary\BethanysPieShopHRM.ComponentsLibrary.csproj", "{FF712788-7FC6-4AFE-9931-AF89FA53632B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.App", "BethanysPieShopHRM.App\BethanysPieShopHRM.App.csproj", "{F88D581A-E133-4605-A953-28AFD8E8B751}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.Client", "BethanysPieShopHRM.Client\BethanysPieShopHRM.Client.csproj", "{92AB9E0A-8556-4E37-9789-4FDEE8E91757}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.Server", "BethanysPieShopHRM.Server\BethanysPieShopHRM.Server.csproj", "{F479F689-20FB-4BA3-B098-5A1152CA96F3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1CC4E0E-F41F-4779-9D36-B5AD074E40DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1CC4E0E-F41F-4779-9D36-B5AD074E40DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1CC4E0E-F41F-4779-9D36-B5AD074E40DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1CC4E0E-F41F-4779-9D36-B5AD074E40DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B737385A-8974-4C6D-8FCE-8C351C1C8C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B737385A-8974-4C6D-8FCE-8C351C1C8C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B737385A-8974-4C6D-8FCE-8C351C1C8C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,18 +38,6 @@ Global
 		{FF712788-7FC6-4AFE-9931-AF89FA53632B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF712788-7FC6-4AFE-9931-AF89FA53632B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF712788-7FC6-4AFE-9931-AF89FA53632B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F88D581A-E133-4605-A953-28AFD8E8B751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F88D581A-E133-4605-A953-28AFD8E8B751}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F88D581A-E133-4605-A953-28AFD8E8B751}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F88D581A-E133-4605-A953-28AFD8E8B751}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92AB9E0A-8556-4E37-9789-4FDEE8E91757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92AB9E0A-8556-4E37-9789-4FDEE8E91757}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92AB9E0A-8556-4E37-9789-4FDEE8E91757}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92AB9E0A-8556-4E37-9789-4FDEE8E91757}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F479F689-20FB-4BA3-B098-5A1152CA96F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F479F689-20FB-4BA3-B098-5A1152CA96F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F479F689-20FB-4BA3-B098-5A1152CA96F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F479F689-20FB-4BA3-B098-5A1152CA96F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

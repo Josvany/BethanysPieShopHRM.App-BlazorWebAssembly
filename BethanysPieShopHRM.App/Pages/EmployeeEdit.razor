@@ -1,21 +1,19 @@
-﻿@using BethanysPieShopHRM.Shared
+﻿@page "/employeeEdit"
+@page "/employeeEdit/{EmployeeId}"
 
-@page "/employeeedit"
-@page "/employeeedit/{EmployeeId}"
+@using BethanysPieShopHRM.Shared
 
 @if (!Saved)
 {
     <section class="employee-edit">
         <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
-
-        <EditForm Model="@Employee" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
-
+        <EditForm Model="@Employee" OnValidSubmit="@HandleValidSubmit"
+                  OnInvalidSubmit="@HandleInvalidSubmit">
             <DataAnnotationsValidator />
-            <ValidationSummary />
-
+            <ValidationSummary></ValidationSummary>
             <div class="form-group row">
                 <label for="lastName" class="col-sm-3">Last name: </label>
-                <InputText id="lastName" class="form-control col-sm-8" placeholder="Enter last name" @bind-Value="@Employee.LastName"></InputText>
+                <InputText id="lastName" class="form-control col-sm-8" @bind-Value="@Employee.LastName" placeholder="Enter last name"></InputText>
                 <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Employee.LastName)" />
             </div>
 
@@ -132,6 +130,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary edit-btn">Save employee</button>
+
             @if (Employee.EmployeeId > 0)
             {
                 <a class="btn btn-danger" @onclick="@DeleteEmployee">
@@ -140,13 +139,11 @@
             }
 
             <a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
-
         </EditForm>
-
     </section>
+
 }
 else
 {
     <div class="alert @StatusClass">@Message</div>
-
 }
