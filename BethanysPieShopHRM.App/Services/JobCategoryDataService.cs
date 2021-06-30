@@ -3,13 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace BethanysPieShopHRM.App.Services
 {
-    public class JobCategoryDataService : IJobCategoryDataService
+    public class JobCategoryDataService: IJobCategoryDataService
     {
         private readonly HttpClient _httpClient;
 
@@ -29,6 +28,5 @@ namespace BethanysPieShopHRM.App.Services
             return await JsonSerializer.DeserializeAsync<JobCategory>
                 (await _httpClient.GetStreamAsync($"api/jobcategory/{jobCategoryId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
-
     }
 }

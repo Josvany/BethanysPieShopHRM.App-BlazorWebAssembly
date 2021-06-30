@@ -5,12 +5,11 @@ using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace BethanysPieShopHRM.App.Pages
 {
-    public partial class EmployeeOverView
+    public partial class EmployeeOverview
     {
         public IEnumerable<Employee> Employees { get; set; }
 
@@ -19,7 +18,7 @@ namespace BethanysPieShopHRM.App.Pages
 
         protected AddEmployeeDialog AddEmployeeDialog { get; set; }
 
-        protected async override Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
         {
             Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
         }
