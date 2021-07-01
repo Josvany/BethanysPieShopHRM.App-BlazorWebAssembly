@@ -1,8 +1,10 @@
 ﻿using BethanysPieShopHRM.App.Services;
 using BethanysPieShopHRM.Shared;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +38,14 @@ namespace BethanysPieShopHRM.App.Pages
         protected string StatusClass = string.Empty;
         protected bool Saved;
 
+        private ElementReference LastNameInput;
+
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            await LastNameInput.FocusAsync();
+
+        }
+
         protected override async Task OnInitializedAsync()
         {
             Saved = false;
@@ -67,6 +77,19 @@ namespace BethanysPieShopHRM.App.Pages
 
             if (Employee.EmployeeId == 0) //new
             {
+
+                if (selectedFiles != null)//take first image
+                {
+                    var file = selectedFiles[0];
+                    Stream stream = file.OpenReadStream();
+                    MemoryStream ms = new MemoryStream();
+                    await stream.CopyToAsync(ms);
+                    stream.Close();
+
+                    Employee.ImageName = file.Name;
+                    Employee.ImageContent = ms.ToArray();
+                }
+
                 var addedEmployee = await EmployeeDataService.AddEmployee(Employee);
                 if (addedEmployee != null)
                 {
@@ -110,5 +133,14 @@ namespace BethanysPieShopHRM.App.Pages
         {
             NavigationManager.NavigateTo("/employeeoverview");
         }
+
+        private IReadOnlyList<IBrowserFile> selectedFiles;
+        private void OnInputFileChange(InputFileChangeEventArgs e)
+        {
+            selectedFiles = e.GetMultipleFiles();
+            Message = $"{selectedFiles.Count} file(s) selected";
+            StateHasChanged();
+        }
+
     }
 }
