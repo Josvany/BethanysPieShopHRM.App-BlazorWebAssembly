@@ -53,7 +53,7 @@ namespace BethanysPieShopHRM.App.Pages
             //Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
             JobCategories = (await JobCategoryDataService.GetAllJobCategories()).ToList();
 
-            _ = int.TryParse(EmployeeId, out var employeeId);
+            int.TryParse(EmployeeId, out var employeeId);
 
             if (employeeId == 0) //new employee is being created
             {

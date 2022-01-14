@@ -58,12 +58,12 @@ namespace BethanysPieShopHRM.Api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            string currentUrl = _httpContextAccessor.HttpContext.Request.Host.Value;
-            var path = $"{_webHostEnvironment.WebRootPath}\\uploads\\{employee.ImageName}";
-            var fileStream = System.IO.File.Create(path);
-            fileStream.Write(employee.ImageContent, 0, employee.ImageContent.Length);
-            fileStream.Close();
-            employee.ImageName = $"https://{currentUrl}/uploads/{employee.ImageName}";
+            //string currentUrl = _httpContextAccessor.HttpContext.Request.Host.Value;
+            //var path = $"{_webHostEnvironment.WebRootPath}\\uploads\\{employee.ImageName}";
+            //var fileStream = System.IO.File.Create(path);
+            //fileStream.Write(employee.ImageContent, 0, employee.ImageContent.Length);
+            //fileStream.Close();
+            //employee.ImageName = $"https://{currentUrl}/uploads/{employee.ImageName}";
 
             var createdEmployee = _employeeRepository.AddEmployee(employee);
 
